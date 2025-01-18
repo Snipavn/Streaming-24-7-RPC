@@ -10,12 +10,12 @@ keepAlive();
 function formatTime() { //Credits to himika#0001 and never#0001
   const date = new Date();
   const options = {
-    timeZone: 'America/New_York', //https://www.zeitverschiebung.net/en/ and find your city and enter here
+    timeZone: 'Asia/Ho_Chi_Minh', //https://www.zeitverschiebung.net/en/ and find your city and enter here
     hour12: true,
     hour: 'numeric',
     minute: 'numeric'
   };
-  return new Intl.DateTimeFormat('en-US', options).format(date);
+  return new Intl.DateTimeFormat('vi-VIE', options).format(date);
 }
 
 client.on('ready', async () => {
@@ -23,19 +23,19 @@ client.on('ready', async () => {
   console.log(`${client.user.tag} - rich presence started!`);
 
   const r = new Discord.RichPresence()
-    .setApplicationId('Your Application ID')
+    .setApplicationId('Nhập id')
     .setType('STREAMING')
-    .setURL('Your Twitch URL') //Must be a youtube video link 
-    .setState('Your State')
-    .setName('mrnekrozyt')
-    .setDetails(`THE NAME IT SHOWS YOUR STREAMING [${formatTime()}]`)
+    .setURL('https://twitch.tv/discord') //Must be a youtube video link 
+    .setState('24/7')
+    .setName('24/7')
+    .setDetails(`Live[${formatTime()}]`)
     .setStartTimestamp(Date.now())
- .setAssetsLargeImage('Large Image URL') //You can put links in tenor or discord and etc.
+ .setAssetsLargeImage('https://media.discordapp.net/attachments/882971561118806066/1127012634739363861/lofi.gif') //You can put links in tenor or discord and etc.
     .setAssetsLargeText('Large Text') //Text when you hover the Large image
-    .setAssetsSmallImage('Small Image URL') //You can put links in tenor or discord and etc.
+    .setAssetsSmallImage('https://media.discordapp.net/attachments/882971561118806066/1127012635087470683/lofi-girl-lofi.gif') //You can put links in tenor or discord and etc.
     .setAssetsSmallText('Small Text') //Text when you hover the Small image
-    .addButton('Button 1', 'Button URL')
-    .addButton('Button 2', 'Button URL');
+    .addButton('24/7', 'https://www.youtube.com/live/jfKfPfyJRdk?feature=share')
+    .addButton('24/7', 'https://www.youtube.com/live/jfKfPfyJRdk?feature=share');
 
   client.user.setActivity(r);
   client.user.setPresence({ status: "dnd" }); //dnd, online, idle, offline
